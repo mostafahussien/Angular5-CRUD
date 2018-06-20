@@ -1,0 +1,41 @@
+nav {
+  a.active {
+    color: blue;
+  }
+}
+
+.example-spacer {
+  flex: 1;
+}
+
+.CustomerContainer {
+  padding: 20px 60px;
+  padding-bottom: 40px;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.edit-form {
+  max-width: 60%;
+}
+
+.right {
+  float: right;
+}
+
+.mat-column-actions {
+  text-align: center;
+}
+
+.addCustomer {
+  position: fixed !important;
+  bottom: 30px;
+  right: 30px;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}

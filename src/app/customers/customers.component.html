@@ -1,0 +1,42 @@
+<div>
+  <!-- <h1>Customers List</h1> -->
+
+  <mat-table [dataSource]="dataSource">
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef>ID</mat-header-cell>
+      <mat-cell *matCellDef="let customer">{{customer.ID}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef>Full Name</mat-header-cell>
+      <mat-cell *matCellDef="let customer">{{customer.firstName}} {{customer.lastName}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="birthday">
+      <mat-header-cell *matHeaderCellDef>Date of Birth</mat-header-cell>
+      <mat-cell *matCellDef="let customer">{{customer.birthdate}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="gender">
+      <mat-header-cell *matHeaderCellDef>Gender</mat-header-cell>
+      <mat-cell *matCellDef="let customer">{{customer.gender}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="customerLifetimeValue">
+      <mat-header-cell *matHeaderCellDef>Life Time Value</mat-header-cell>
+      <mat-cell *matCellDef="let customer">{{customer.lifeTimeValue}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="lastContact">
+      <mat-header-cell *matHeaderCellDef>Last Contact</mat-header-cell>
+      <mat-cell *matCellDef="let customer">{{customer.lastContact}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="actions">
+      <mat-header-cell *matHeaderCellDef>Actions</mat-header-cell>
+      <mat-cell *matCellDef="let customer">
+        <button mat-raised-button color="primary" (click)="onEdit(customer)">Edit</button>
+        <button mat-raised-button color="warn" (click)="onDelete(customer.$key)">Delete</button>
+
+      </mat-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+  </mat-table>
+</div>
+
+<button class="addCustomer" mat-fab color="accent" routerLink="/customer">Add</button>

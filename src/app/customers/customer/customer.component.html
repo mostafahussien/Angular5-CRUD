@@ -1,0 +1,49 @@
+<div class="CustomerContainer">
+
+  <h2>Add New Customer</h2>
+
+  <form class="edit-form" #customerForm="ngForm" (ngSubmit)="onSubmit(customerForm)">
+    <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="customerService.selectedCustomer.$key">
+    <mat-form-field class="example-full-width">
+      <input matInput name="ID" #ID="ngModel" [(ngModel)]="customerService.selectedCustomer.ID" placeholder="ID" required>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput name="firstName" #firstName="ngModel" [(ngModel)]="customerService.selectedCustomer.firstName" placeholder="First Name"
+        required>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput name="lastName" #lastName="ngModel" [(ngModel)]="customerService.selectedCustomer.lastName" placeholder="Last Name"
+        required>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput type="date" name="birthdate" #birthdate="ngModel" [(ngModel)]="customerService.selectedCustomer.birthdate"
+        placeholder="Date of Birth" required>
+    </mat-form-field>
+
+
+    <mat-form-field class="example-full-width">
+      <input matInput name="gender" #gender="ngModel" [(ngModel)]="customerService.selectedCustomer.gender" placeholder="Gender"
+        required>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput name="lastContact" #lastContact="ngModel" [(ngModel)]="customerService.selectedCustomer.lastContact" placeholder="Last Contact"
+        required>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput name="lifeTimeValue" #lifeTimeValue="ngModel" [(ngModel)]="customerService.selectedCustomer.lifeTimeValue"
+        placeholder="Life Time Value" required>
+    </mat-form-field>
+
+    <button mat-button routerLink="/customersList">Go Back</button>
+
+    <button class="right" mat-raised-button color="primary" type="submit">Save Data</button>
+
+
+  </form>
+
+</div>
